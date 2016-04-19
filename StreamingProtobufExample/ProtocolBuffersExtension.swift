@@ -44,12 +44,13 @@ extension GeneratedMessageProtocol {
         return try self.parseFromData(messageData)
     }
     
-//    static func readDelimitedFrom(inputStream: NSInputStream) throws -> [GeneratedMessageProtocol] {
-//        var messages = Array<GeneratedMessageProtocol>()
-//        while inputStream.hasBytesAvailable {
-//            try messages.append(self.readDelimitedFrom(inputStream))
-//        }
-//        return messages
-//    }
+    static func readAllDelimitedFrom(inputStream: NSInputStream) throws -> [Self] {
+        var messages = [Self]()
+        while inputStream.hasBytesAvailable {
+            try messages.append(self.readDelimitedFrom(inputStream))
+        }
+        return messages
+    }
 
 }
+

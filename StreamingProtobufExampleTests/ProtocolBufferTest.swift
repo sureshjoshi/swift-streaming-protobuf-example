@@ -94,29 +94,32 @@ class ProtocolBufferTest: XCTestCase {
         
     }
 
-//    func testWriteThenRead_withMultipleSamples_returnsSameResult() {
-//        final int kNumberOfSamples = 5;
-//        
-//        List<Message> samples = new ArrayList<>();
-//        for (int i = 0; i < kNumberOfSamples; ++i) {
-//            samples.add(new Sample.Builder()
-//                .x(42)
-//                .y(84)
-//                .build());
-//        }
-//        
-//        WireUtils.encodeWithLengthPrefix(mByteArrayOutputStream, samples);
-//        mByteArrayInputStream = new ByteArrayInputStream(mByteArrayOutputStream.toByteArray());
-//        
-//        List<Sample> decodedSamples = WireUtils.decodeWithLengthPrefix(mByteArrayInputStream, Sample.ADAPTER);
-//        Assert.assertEquals(kNumberOfSamples, samples.size());
-//        
-//        for (Sample decodedSample : decodedSamples) {
-//            Assert.assertEquals(42, decodedSample.x.intValue());
-//            Assert.assertEquals(84, decodedSample.y.intValue());
-//        }
-//    }
-    
+    func testWriteThenRead_withMultipleSamples_returnsSameResult() {
+        let kNumberOfSamples = 5
+        
+        var samples = Array<Sureshjoshi.Pb.Sample>()
+        for _ in 0 ..< kNumberOfSamples {
+            samples.append(try! Sureshjoshi.Pb.Sample.Builder()
+                .setX(42)
+                .setY(84)
+                .build())
+        }
+        
+        let _ = try! samples.writeDelimitedTo(outputStream!)
+        
+        let data = outputStream!.propertyForKey(NSStreamDataWrittenToMemoryStreamKey) as! NSData
+        inputStream = NSInputStream(data: data)
+        inputStream?.open()
+        let decodedSamples = try! Sureshjoshi.Pb.Sample.readAllDelimitedFrom(inputStream!)
+        inputStream?.close()
+        
+        XCTAssertEqual(kNumberOfSamples, decodedSamples.count)
+        
+        for var decodedSample in decodedSamples {
+            XCTAssertEqual(42, decodedSample.x)
+            XCTAssertEqual(84, decodedSample.y)
+        }
+    }
 
     
 }
