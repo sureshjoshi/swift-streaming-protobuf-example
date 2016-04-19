@@ -12,7 +12,10 @@
 		198BB0FB1CC5B3A200B6B371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 198BB0F91CC5B3A200B6B371 /* Main.storyboard */; };
 		198BB0FD1CC5B3A200B6B371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 198BB0FC1CC5B3A200B6B371 /* Assets.xcassets */; };
 		198BB1001CC5B3A200B6B371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 198BB0FE1CC5B3A200B6B371 /* LaunchScreen.storyboard */; };
-		198BB10B1CC5B3A200B6B371 /* StreamingProtobufExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198BB10A1CC5B3A200B6B371 /* StreamingProtobufExampleTests.swift */; };
+		198BB10B1CC5B3A200B6B371 /* ProtocolBufferTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198BB10A1CC5B3A200B6B371 /* ProtocolBufferTest.swift */; };
+		198BB1161CC5B95000B6B371 /* Sureshjoshi.Pb.Sample.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198BB1151CC5B95000B6B371 /* Sureshjoshi.Pb.Sample.proto.swift */; };
+		198BB11C1CC5CF6400B6B371 /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198BB11B1CC5CF6400B6B371 /* NSDataExtensions.swift */; };
+		198BB11E1CC5D66800B6B371 /* ProtocolBuffersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198BB11D1CC5D66800B6B371 /* ProtocolBuffersExtension.swift */; };
 		37694FA398F8FE90FB36948B /* Pods_StreamingProtobufExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA92C342915D6406FFDAFA14 /* Pods_StreamingProtobufExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +38,11 @@
 		198BB0FF1CC5B3A200B6B371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		198BB1011CC5B3A200B6B371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		198BB1061CC5B3A200B6B371 /* StreamingProtobufExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreamingProtobufExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		198BB10A1CC5B3A200B6B371 /* StreamingProtobufExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingProtobufExampleTests.swift; sourceTree = "<group>"; };
+		198BB10A1CC5B3A200B6B371 /* ProtocolBufferTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolBufferTest.swift; sourceTree = "<group>"; };
 		198BB10C1CC5B3A200B6B371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		198BB1151CC5B95000B6B371 /* Sureshjoshi.Pb.Sample.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sureshjoshi.Pb.Sample.proto.swift; sourceTree = "<group>"; };
+		198BB11B1CC5CF6400B6B371 /* NSDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDataExtensions.swift; sourceTree = "<group>"; };
+		198BB11D1CC5D66800B6B371 /* ProtocolBuffersExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolBuffersExtension.swift; sourceTree = "<group>"; };
 		4FBB8E1798EB8C023ED308E3 /* Pods-StreamingProtobufExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingProtobufExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-StreamingProtobufExample/Pods-StreamingProtobufExample.release.xcconfig"; sourceTree = "<group>"; };
 		652729FFB7FC9850B8B3938F /* Pods-StreamingProtobufExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingProtobufExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StreamingProtobufExample/Pods-StreamingProtobufExample.debug.xcconfig"; sourceTree = "<group>"; };
 		DA92C342915D6406FFDAFA14 /* Pods_StreamingProtobufExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamingProtobufExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +99,8 @@
 		198BB0F41CC5B3A200B6B371 /* StreamingProtobufExample */ = {
 			isa = PBXGroup;
 			children = (
+				198BB11B1CC5CF6400B6B371 /* NSDataExtensions.swift */,
+				198BB1171CC5B95300B6B371 /* Protobuf */,
 				198BB0F51CC5B3A200B6B371 /* AppDelegate.swift */,
 				198BB0F71CC5B3A200B6B371 /* ViewController.swift */,
 				198BB0F91CC5B3A200B6B371 /* Main.storyboard */,
@@ -106,10 +114,19 @@
 		198BB1091CC5B3A200B6B371 /* StreamingProtobufExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				198BB10A1CC5B3A200B6B371 /* StreamingProtobufExampleTests.swift */,
+				198BB10A1CC5B3A200B6B371 /* ProtocolBufferTest.swift */,
 				198BB10C1CC5B3A200B6B371 /* Info.plist */,
 			);
 			path = StreamingProtobufExampleTests;
+			sourceTree = "<group>";
+		};
+		198BB1171CC5B95300B6B371 /* Protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				198BB11D1CC5D66800B6B371 /* ProtocolBuffersExtension.swift */,
+				198BB1151CC5B95000B6B371 /* Sureshjoshi.Pb.Sample.proto.swift */,
+			);
+			name = Protobuf;
 			sourceTree = "<group>";
 		};
 		30670DFBD49E5B14EF3E0EE2 /* Frameworks */ = {
@@ -272,8 +289,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				198BB11E1CC5D66800B6B371 /* ProtocolBuffersExtension.swift in Sources */,
+				198BB11C1CC5CF6400B6B371 /* NSDataExtensions.swift in Sources */,
 				198BB0F81CC5B3A200B6B371 /* ViewController.swift in Sources */,
 				198BB0F61CC5B3A200B6B371 /* AppDelegate.swift in Sources */,
+				198BB1161CC5B95000B6B371 /* Sureshjoshi.Pb.Sample.proto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				198BB10B1CC5B3A200B6B371 /* StreamingProtobufExampleTests.swift in Sources */,
+				198BB10B1CC5B3A200B6B371 /* ProtocolBufferTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

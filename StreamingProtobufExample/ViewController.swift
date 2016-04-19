@@ -20,6 +20,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func addOneSample() {
+        
+    }
+    
+    func addTenSamples() {
+        
+    }
+    
+    
+    func refreshChart() {
+        
+    }
 
 }
 
